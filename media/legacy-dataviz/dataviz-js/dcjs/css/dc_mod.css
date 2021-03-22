@@ -1,0 +1,89 @@
+/* 
+    Modifications/Fixes for dc.css
+*/
+
+.source-graph path {
+    stroke: white !important;
+    stroke-width: 2 !important;
+}
+
+.source-graph text {
+    font-size: 14px !important;
+    fill: #0f0d0d !important;
+
+
+}
+
+body {
+    width:1000px;
+    margin: 0 auto;
+    font-family: Helvetica, Verdana, sans-serif; 
+}
+
+#leftcontent {
+    float: left;
+    display: block;
+    width:660px;
+}
+
+#rightbar {
+    float: right;
+    display: block;
+    width:340px;
+}
+#leftinner1 {
+    float: left;
+    display: block;
+    width:340px;
+}
+#leftinner2 {
+    float: left;
+    display: block;
+    width:340px;
+}
+
+#centercontent {
+    float: left;
+    display: block;
+    width:1000px;
+}
+
+.dc-chart g.row text {
+    fill: black;
+    font-size: 12px;
+}
+/*
+.row {
+    float: left;
+    display: block;
+    width:100%;
+}
+*/
+
+.dc-chart .pie-slice {
+    fill: black !important;
+}
+
+.dc-chart rect.stack0 {
+    fill: green;
+    stroke: none;
+}
+
+.dc-chart rect.stack1 {
+    fill: yellow;
+    stroke: none;
+}
+
+.dc-chart rect.stack2 {
+    fill: red;
+    stroke: none;
+}
+
+#rightbar .dc-chart g.row text {
+    fill: black;
+    font-size: 10px;
+}
+
+.table {
+    font-size: 0.6em;
+}

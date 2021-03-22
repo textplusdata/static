@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+<meta charset="utf-8">
+		<title>DataViz: Arms transfers and political freedom &lt; text+data</title>
+		<meta name="robots" content="index, follow" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<!-- Favicon -->
+
+
+  
+
+<!-- Extra CSS -->
+
+            <link rel="stylesheet" type="text/css" href="../dataviz-js/dcjs/css/dc.css"/>           
+            <link rel="stylesheet" type="text/css" href="../dataviz-js/datatables/css/demo_table.css"/>
+            <link rel="stylesheet" type="text/css" href="../dataviz-js/datatables/css/jquery.dataTables.css"/>
+            <link rel="stylesheet" type="text/css" href="../dataviz-js/jquery-chosen/css/chosen.min.css"/>
+			
+
+<!-- /Extra CSS -->
+            
+            
+<!-- Main CSS-->
+   <!-- TEST COMMENT OUT CSS             
+                <link href="Bootstrap3/css/bootstrap_bootswatch_flatly.min.css" rel="stylesheet" media="screen">
+                <link href="Bootstrap3/css/my_mods.css" rel="stylesheet" media="screen">
+-->
+                   
+
+<!-- JS in plugin folders -->
+			<script src="http://code.jquery.com/jquery.js"></script>
+            <script type="text/javascript" language="javascript" src="http://cdnjs.cloudflare.com/ajax/libs/datatables/1.9.4/jquery.dataTables.min.js"></script>
+            
+            <script type="text/javascript" language="javascript" src="../dataviz-js/jquery-chosen/js/chosen.jquery.min.js"></script>
+            <!-- JS from online sources-->
+            <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.3.3/d3.min.js" charset="utf-8"></script>
+
+            <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/crossfilter/1.3.1/crossfilter.min.js"></script>
+                <!-- Dropped until master updated Oct 2013
+               <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/dc/1.6.0/dc.min.js"></script>
+
+            -->
+            <script type="text/javascript" src="../dataviz-js/dcjs/js/dc.min.js"></script> 
+            
+            
+            <!-- Set site URL for use in javascript 
+            <//?php $htmlUrlString = string(get_site_url()); ?>
+            -->
+            		
+</head>
+
+<body id="arms-transfers-and-political-freedom2">
+    
+<div class="container">
+
+ 
+
+
+      <!-- Page content   -->
+        <div class="row">
+            <div class="col-xs-12 col-md-6">
+                <h1>DataViz: Arms transfers and political freedom</h1> 
+                <p>This data dashboard combines data on the volume of arms transfers from the <a href="http://www.sipri.org/research/armaments/transfers" target="_blank">Stockholm International Peace Research Institute</a> (Sipri) with ratings of country-level political freedom and civil liberties from <a href="http://www.freedomhouse.org/report-types/freedom-world" target="_blank">Freedom House</a>.</p>
+
+<p>Data is for the top 25 arms exporters (smaller exporters grouped as "other exporters") between 1972 and 2012 and the Freedom House ratings of the countries they exported to - "Free", "Partly Free" or "Not Free".</p>
+
+<p><strong>NOTE: This data mashup has not been reviewed there may be errors! Use this data at your own risk!</strong></p>
+ 
+               
+                
+                
+            </div>
+            <div class="col-xs-12 col-md-6">
+                <p>Read the full article <a href="http://localhost:8080/textplusdata/GetSimpleCMS323/blog-2013-10-28-arms-transfers-political-freedom">here</a></p>
+                <div id="chart-bar-percent-top-exporters">  
+        <strong>Top 25 Arms Exporters - percentage arms transfers going to free (green), partly-free (yellow) and not-free (red) countries</strong>
+        <a class="reset" href="javascript:dc.filterAll('chartGroupA'); dc.redrawAll('chartGroupA');" style="display: none;">Reset filter</a>
+         <span class="reset" style="display: none;">Current filter: <span class="filter"></span></span><br>
+    </div>    
+            </div>
+          </div>
+            <!-- 
+            Content must contain its own row div
+            -->
+        <div class="row">
+            <div class="col-xs-12 col-md-12">
+                
+                <a id="togglerLink1" href="javascript:toggle('toggledText1', 'togglerLink1');">hide</a> <span class="text-danger"> &lt;== click here to show/hide the narrative </span>
+                <div id="toggledText1" style="display:block">
+                    <h2>Narrative description</h2>
+                   <p>It might come as no surprise to see in the chart below that Norway and Sweden are the exporters with the greatest proportion of transfers to &quot;free&quot; states. However, the volume of their exports is relatively small compared to, for example, the USA. France appears to have a significantly greater proportion of its exports going to &quot;non free&quot; countries compared to its Western counterparts.</p>
+
+<h3>Freedom House</h3>
+
+<p><a href="http://www.freedomhouse.org/report/freedom-world-2013/methodology" target="_blank">Freedom House&#39;s methodology</a> involves rating countries for their political rights and civil liberties on a scale of 1-7.</p>
+
+<p>&nbsp;</p>
+
+<blockquote>Each country is assigned a numerical rating from 1 to 7 for both political rights and civil liberties, with 1 representing the most free and 7 the least free. The ratings are determined by the total number of points (up to 100) each country receives on 10 political rights questions and 15 civil liberties questions; countries receive 0 to 4 points on each question, with 0 representing the smallest degree and 4 the greatest degree of freedom. The average of the political rights and civil liberties ratings, known as the freedom rating, determines the overall status:&nbsp; Free (1.0 to 2.5), Partly Free (3.0 to 5.0), or Not Free (5.5 to 7.0). Freedom House also assigns upward or downward trend arrows to countries which saw general positive or negative trends during the year that were not significant enough to result in a ratings change.</blockquote>
+
+<p>&nbsp;</p>
+
+<p>Freedom House claims that it &quot;does not maintain a culture-bound view of freedom&quot; and eliminates a Western cultural bias in its analysis by using the universal Declaration of Human Rights as a starting point for comparison. It also points out that:</p>
+
+<blockquote>The survey does not rate governments or government performance per se, but rather the real-world rights and freedoms enjoyed by individuals. Freedoms can be affected by state actions as well as by nonstate actors, including insurgents and other armed groups.</blockquote>
+
+<p>&nbsp;</p>
+
+<p>A problem with Freedom House&#39;s data is that it covers uneven periods and the methodology was changed in terms of ratings.</p>
+
+<h3>Sipri</h3>
+
+<p>Sipri uses its own method for measuring the volume (rather than the sale price) of arms transfers - TIV.</p>
+
+<blockquote>Trend Indicator Value (TIV) data provide an indication of the volume of arms transferred. Information can be provided on the total TIV of a country, rebel group, or international organization&#39;s arms imports or exports, broken down by supplier, recipient or type of weapon system.</blockquote>
+
+<p>Sipri also has its own data visualisation tool, their <a href="http://portal.sipri.org/publications/pages/transfer/splash" target="_blank">data portal</a>.</p>
+
+<h3>Data reliability</h3>
+
+<p>COUNTRY NAME MATCHING<br />
+	NON-STATE ACTORS</p>
+
+<p>&nbsp;</p>
+                    <p class='text-warning'>
+                        <a id="togglerLink2" href="javascript:toggle('toggledText1', 'togglerLink1');">hide</a> <span class="text-danger">&lt;== click here to show/hide the narrative</span>
+                    
+                </div>
+            </div>
+          </div>
+            <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <div class="row">
+            <div class="col-xs-12 col-md-12">
+                <h2>Dashboard</h2>
+                <button id="clickReset" class="btn btn-danger">Reset all filters on all charts</button>
+                <p>Instructions HERE</p>
+            </div>
+</div>
+
+<div class="row">
+            <div class="col-xs-12 col-md-6">
+                <div id="chart-bar-free-year">
+                <strong>Arms transfers by freedom type and year</strong>
+                <a class="reset" href="javascript:chartBarFreeYear.filterAll();dc.redrawAll();" style="display: none;">Reset filter</a>
+                <p>Select a time range with your mouse</p>
+                </div>
+                <div id="chart-pie-country">
+            <strong>Pie chart of TIV value by freedom status of importer country</strong>
+            <a class="reset" href="javascript:chartPieCountry.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+            <span class="reset" style="display: none;">Current filter: <span class="filter"></span></span><br>
+        </div>
+            </div>
+    
+            <div class="col-xs-12 col-md-6">
+                <div id="chart-bar-top-exporters">  
+                <strong>Top 25 Arms Exporters</strong>
+                <p>Select one or more of the 25 top exporters from the dropdown list or start typing a country name in the box. Then click the button to send the filters to the chart.</p>
+        
+                <select id="TopExporterListChosen" data-placeholder="Choose a Country..." class="chosen-select" multiple style="width:350px;" tabindex="4">
+                <option value=""></option>
+                </select>
+                <button id="buttonSendExporters" class="btn btn-primary">Click to filter the charts with your country choices</button>
+                <br>
+     
+                <a class="reset" href="javascript:chartBarTopExporters.filterAll();dc.redrawAll();" style="display: none;">Reset filter</a>
+                <span class="reset" style="display: none;">Current filter: <span class="filter"></span></span>
+            </div>
+            </div>
+    </div>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+        <div id="chart-bar-top-importers">  
+            <strong>Top 100 importers</strong>
+            <p>Select one or more of the 100 top exporters from the dropdown list or start typing a country name in the box. Then click the button to send the filters to the chart.</p>
+        
+            <select id="TopImporterListChosen" data-placeholder="Choose a Country..." class="chosen-select" multiple style="width:350px;" tabindex="4">
+                <option value=""></option>
+            </select>
+            <button id="buttonSendImporters" class="btn btn-primary">Click to filter the charts with your country choices</button>
+            <br>
+            <a class="reset" href="javascript:chartBarTopImporters.filterAll();dc.redrawAll();" style="display: none;">Reset filter</a>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+        <div id="chart-bubble-importers">
+            <strong>Bubble of importers</strong>
+            <a class="reset" href="javascript:chartBubbleImporters.filterAll();dc.redrawAll();" style="display: none;">reset</a>
+        </div>
+    </div>       
+</div>
+
+     
+<div class="row">
+    <div class="col-xs-12 col-md-12">
+
+    <table class="table table-hover dc-data-table">
+                        <thead>
+                            <tr class="header">
+                                <th>Export Country</th>
+                                <th>Export Country Code</th>
+                                <th>Import Country</th>
+                                <th>Import Country Code</th>
+                                <th>FH rating</th>
+                                <th>TIV value</th>
+                                <th>Year</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                        </tfoot>
+                    </table>
+        </div>
+</div> 
+                <script type="text/javascript">
+
+var chartBarPercentTopExporters = dc.barChart("#chart-bar-percent-top-exporters","chartGroupA");
+var chartBarFreeYear = dc.barChart("#chart-bar-free-year");
+var chartBarTopExporters = dc.barChart("#chart-bar-top-exporters");
+var chartPieCountry = dc.pieChart("#chart-pie-country");
+var chartBarTopImporters = dc.barChart("#chart-bar-top-importers");
+var chartBubbleImporters = dc.bubbleChart("#chart-bubble-importers");
+
+// load data from csv file
+
+var htmlUrlString = window.location.protocol + "//" + window.location.host;
+
+d3.csv("sipri_fh_top25_top100.csv", function (data) {
+
+// since its a csv file we need to format the data a bit
+// Note - this visualistaion does not use date format...
+    var dateFormat = d3.time.format("%Y");
+    var numberFormat = d3.format(".2f");
+    var numberFormatThousands = d3.format(",");
+
+    // feed it through crossfilter
+    var data = crossfilter(data);
+    var all = data.groupAll();
+
+    // Set all dimensions and groups
+
+    // Set dimension and group for data table
+
+    var allCsvData = data.dimension(function(d){
+        return d.importcountry;});
+    
+    // Loading all 30000 rows of data was too much for mobile devices. Load 2000 in first instance
+    var allCsvDataInfinite = allCsvData.top(Infinity);
+    var allCsvData2000 = allCsvData.top(2000);
+    // var allCsvDataGroup = connection.top(Infinity);
+    
+     // Used for pie chart
+    var fhRatingDimension = data.dimension(function(d){
+        return d.fh_rating_abc;});
+    var fhRatingDimensionGroup = fhRatingDimension.group().reduceSum(function(d){
+        return d.tiv_value;});
+
+    // Exporter dimension/group
+           
+    var exportCountry = data.dimension(function(d){return d.exportcountry;});
+    var exportAmount = exportCountry.group().reduceSum(function(d){return d.tiv_value;});
+    
+    var impCountryDimension = data.dimension(function(d){
+        return d.importcountry;});
+    var impCountryDimensionGroup = impCountryDimension.group().reduceSum(function(d){
+        return d.tiv_value;});
+    
+    var expCountryTopDimension = data.dimension(function(d){
+        return d.top_exporter;});
+    var expCountryTopDimensionGroup = expCountryTopDimension.group().reduceSum(function(d){
+        return d.tiv_value;});
+    
+    var impCountryTopDimension = data.dimension(function(d){
+        return d.top_importer;});
+    var impCountryTopDimensionGroup = impCountryTopDimension.group().reduceSum(function(d){
+        return d.tiv_value;});
+
+//List of top exporters by value for ordering the bar chart
+  var  TopExporterList = expCountryTopDimensionGroup.all().sort(function(a,b) {
+  if (a.value > b.value)
+     return -1;
+  if (a.value < b.value)
+    return 1;
+  return 0;
+}).map(function(a){return a.key;});
+
+// Get a list of Top exporters for select box, sort alphabetically
+  var  TopExporterListUnsorted = expCountryTopDimensionGroup.all()
+        .sort(function (a, b) {
+            return a.key === b.key ? 0 : a.key < b.key ? -1 : 1
+        })
+        .map(function(a){return a.key;});
+
+// Create another dimension for applying the selected dropdown value to
+          var expCountrySelectTopDimension = data.dimension(function(d){
+        return d.top_exporter;});
+
+// Get a list of Top Importers for select box, sort alphabetically
+  var  TopImporterListUnsorted = impCountryTopDimensionGroup.all()
+        .sort(function (a, b) {
+            return a.key === b.key ? 0 : a.key < b.key ? -1 : 1
+        })
+        .map(function(a){return a.key;});
+
+// Create another dimension for applying the selected dropdown value to
+          var impCountrySelectTopDimension = data.dimension(function(d){
+        return d.top_importer;});
+        
+
+    // Other dimensions and groups
+    
+    
+    
+    var yearDimension = data.dimension(function(d){
+        return d.year;});
+    var yearDimensionGroup = yearDimension.group().reduceSum(function(d){
+        return d.tiv_value;});
+    
+    var fhScoreDimension = data.dimension(function(d){
+        return d.fh_score;});
+    var fhScoreDimensionGroup = fhScoreDimension.group().reduceSum(function(d){
+        return d.tiv_value;});
+    
+   
+    
+    // Don't need this one
+    var fhScoreAggregate = data.dimension(function(d){
+        return d.top_importer;});
+    var fhScoreAggregateGroup = fhScoreAggregate.group().reduceSum(function(d){
+        return d.fh_score;});
+
+    // Dimensions for stacking
+    var freeYearlySum = yearDimension.group().reduceSum(function(d){
+        return d.fh_rating_abc==="a) Free"?d.tiv_value:0;});
+    var partlyfreeYearlySum = yearDimension.group().reduceSum(function(d){
+        return d.fh_rating_abc==="b) Partly Free"?d.tiv_value:0;});
+    var notfreeYearlySum = yearDimension.group().reduceSum(function(d){
+        return d.fh_rating_abc==="c) Not Free"?d.tiv_value:0;});
+    var unknownYearlySum = yearDimension.group().reduceSum(function(d){
+        return d.fh_rating_abc==="unknown"?d.tiv_value:0;});
+
+    // Dimensions for stacking
+    var freeImporterSum = expCountryTopDimension.group().reduceSum(function(d){
+        return d.fh_rating_abc=="a) Free"?d.tiv_value:0;});
+    var partlyfreeImporterSum = expCountryTopDimension.group().reduceSum(function(d){
+        return d.fh_rating_abc=="b) Partly Free"?d.tiv_value:0;});
+    var notfreeImporterSum = expCountryTopDimension.group().reduceSum(function(d){
+        return d.fh_rating_abc=="c) Not Free"?d.tiv_value:0;});
+    var unknownImporterSum = expCountryTopDimension.group().reduceSum(function(d){
+        return d.fh_rating_abc=="unknown"?d.tiv_value:0;});
+    
+    // Dimension and group for creating bubble
+    var importerCrossDimension = data.dimension(function(d) {
+                return d.top_importer;});
+
+    var importerCrossDimensionGroup = importerCrossDimension.group().reduce(
+                    //add
+                    function(p, v) {
+                        ++p.count;
+                        p.tiv_sum += +v.tiv_value;
+                        p.fhscore_sum += +v.fh_score;
+                        p.fhscore_avg = p.fhscore_sum / p.count;
+                        return p;
+                    },
+                    //remove
+                    function(p, v) {
+                        --p.count;
+                        p.tiv_sum -= +v.tiv_value;
+                        p.fhscore_sum -= +v.fh_score;
+                        p.fhscore_avg = p.fhscore_sum / p.count;
+                        return p;
+                    },
+                    //init
+                    function() {
+                        return {count:0, tiv_sum: 0, fhscore_sum: 0, fhscore_avg: 0};
+                    }
+            );
+    
+    // Dimension for percentage stacking of exporters from https://github.com/NickQiZhu/dc.js/issues/21
+
+    var exporterCrossDimension = data.dimension(function(d) {
+                return d.top_exporter;});
+
+    var exporterCrossDimensionGroup = exporterCrossDimension.group().reduce(
+    // add
+    function(p,v){
+        ++p.count;
+        p.tiv_total += +v.tiv_value;
+        if(v.fh_rating_abc == "a) Free"){ p.rating_a += +v.tiv_value; p.rating_a_Perc = (p.rating_a/p.tiv_total)*100;}
+        if(v.fh_rating_abc == "b) Partly Free"){ p.rating_b += +v.tiv_value; p.rating_b_Perc = (p.rating_b/p.tiv_total)*100;}
+        if(v.fh_rating_abc == "c) Not Free"){ p.rating_c += +v.tiv_value; p.rating_c_Perc = (p.rating_c/p.tiv_total)*100;}
+        if(v.fh_rating_abc == "unknown"){ p.rating_d += +v.tiv_value; p.rating_d_Perc = (p.rating_d/p.tiv_total)*100;}
+        return p;
+    },
+
+    // remove
+    function(p,v){
+        --p.count;
+         p.tiv_total -= +v.tiv_value;
+        if(v.fh_rating_abc == "a) Free"){ p.rating_a -= +v.tiv_value; p.rating_a_Perc = (p.rating_a/p.tiv_total)*100;}
+        if(v.fh_rating_abc == "b) Partly Free"){ p.rating_b -= +v.tiv_value; p.rating_b_Perc = (p.rating_b/p.tiv_total)*100;}
+        if(v.fh_rating_abc == "c) Not Free"){ p.rating_c -= +v.tiv_value; p.rating_c_Perc = (p.rating_c/p.tiv_total)*100;}
+        if(v.fh_rating_abc == "unknown"){ p.rating_d -= +v.tiv_value; p.rating_d_Perc = (p.rating_d/p.tiv_total)*100;}
+        return p;
+    },
+    // init
+    function(){ return {count:0, tiv_total:0, rating_a:0, rating_a_Perc:0, rating_b:0, rating_b_Perc:0, rating_c:0, rating_c_Perc:0, rating_d:0, rating_d_Perc:0,}; }
+
+);
+TopExporterPercentList = exporterCrossDimensionGroup.all().sort(function(a,b) {
+  if (a.value.rating_a_Perc > b.value.rating_a_Perc)
+     return -1;
+  if (a.value.rating_a_Perc < b.value.rating_a_Perc)
+    return 1;
+  return 0;
+}).map(function(a){return a.key});
+
+
+
+
+    // format x-axis labels as text
+    var formatAsText = d3.format("d");
+       
+    // set up charts
+    
+    chartBarPercentTopExporters
+        .width(460)
+        .height(240)
+        .margins({top: 10, right: 0, bottom: 90, left: 30})
+        .ordinalColors(["green","yellow","red","blue"])
+        .dimension(exporterCrossDimension)
+        .group(exporterCrossDimensionGroup)
+        //.valueAccessor(function (p) {
+        //        return p.value.rating_a_Perc;
+        //        })
+        .valueAccessor(function(p){return (p.value.rating_a/p.value.tiv_total)*100;})
+        .stack(exporterCrossDimensionGroup, function(p){return (p.value.rating_b/p.value.tiv_total)*100})
+        .stack(exporterCrossDimensionGroup, function(p){return (p.value.rating_c/p.value.tiv_total)*100})
+        .stack(exporterCrossDimensionGroup, function(p){return (p.value.rating_d/p.value.tiv_total)*100})
+               //.stack(exporterCrossDimensionGroup, function(p){return) p.value.rating_c_Perc})
+       // .stack(exporterCrossDimensionGroup, function(p){return p.value.rating_d_Perc})
+        .centerBar(true)
+        .gap(0)
+        .elasticY(true)
+        .elasticX(true)
+        //.round(dc.round.floor)
+        .xUnits(dc.units.ordinal)
+       
+        .x (d3.scale.ordinal()
+            //.domain(data.map(function(d){ return d.importcountry })
+            //.domain(impcountries)
+            .rangeRoundBands([0, 800], .1).domain(TopExporterPercentList)
+            //.domain(array.map(function(d) { return d.importcountry; }))
+            //.rangeBands([0, 200])
+            )
+        // .x (d3.scale.ordinal().domain(impCountryArray))
+        .renderHorizontalGridLines(true)
+        .renderLabel(true)
+        .renderTitle(true)
+        .title(function(d) { return d.key + ": " + "\n" + numberFormatThousands(d3.round((d.value.rating_a/d.value.tiv_total)*100,1)) + " % to 'Free' countries"+ "\n" + numberFormatThousands(d3.round((d.value.rating_b/d.value.tiv_total)*100,1)) + " % to 'Partly Free' countries" + "\n" + numberFormatThousands(d3.round((d.value.rating_c/d.value.tiv_total)*100,1)) + " % to 'Not Free' countries"+ "\n" + numberFormatThousands(d3.round((d.value.rating_d/d.value.tiv_total)*100,1)) + " % to countries with unknown country rating";})
+        .xAxis()
+        ;
+
+    // Pie chart of overall TIV value and FH status
+    chartPieCountry
+        .width(140) // (optional) define chart width, :default = 200
+        .height(140) // (optional) define chart height, :default = 200
+        .dimension(fhRatingDimension) // set dimension
+        .group(fhRatingDimensionGroup) // set group
+        .transitionDuration(500) // (optional) define chart transition duration, :default = 350
+        .ordinalColors(["green","yellow","red","blue"])
+        .radius(65) // define pie radius
+        .renderLabel(true)
+        .renderTitle(true)
+.title(function(d) {return d.key + ": " + "\n" + "TIV value: " + numberFormatThousands(d3.round(d.value));})
+         
+        ;
+           
+
+    chartBarFreeYear
+        .width(460)
+        .height(200)
+        .ordinalColors(["green","yellow","red","blue"])
+        .margins({top: 0, right: 0, bottom: 20, left: 50})
+        .dimension(yearDimension)
+        .group(freeYearlySum)
+        .stack(partlyfreeYearlySum)
+        .stack(notfreeYearlySum)
+        .stack(unknownYearlySum)
+        .centerBar(true)
+        .gap(0)
+        .elasticY(true)
+        .round(dc.round.floor)
+        .x(d3.scale.linear().domain([1971, 2013]))
+        .renderHorizontalGridLines(true)
+        .xAxis().tickFormat(formatAsText)
+
+        ;
+                   
+//    chartBarImporters.width(620)
+//        .height(250)
+//        .margins({top: 0, right: 10, bottom: 70, left: 10})
+//        .dimension(impCountryTopDimension)
+//        .group(impCountryTopDimensionGroup)
+//        //.stack(partlyfreeYearlySum)
+//        //.stack(notfreeYearlySum)
+//        .centerBar(true)
+//        .gap(0)
+//        .elasticY(true)
+//        .elasticX(true)
+//        .round(dc.round.floor)
+//        .xUnits(dc.units.ordinal)
+//        .x (d3.scale.ordinal()
+//            //.domain(data.map(function(d){ return d.importcountry })
+//            //.domain(impcountries)
+//            .rangeRoundBands([0, 800], .1)
+//            //.domain(array.map(function(d) { return d.importcountry; }))
+//            //.rangeBands([0, 200])
+//            )
+//        // .x (d3.scale.ordinal().domain(impCountryArray))
+//        .renderHorizontalGridLines(true)
+//        .renderLabel(true)
+//        .renderTitle(true)
+//        .xAxis()
+//        //.tickFormat(formatAsText)
+//       
+//        ;
+
+        chartBarTopExporters
+        .width(460)
+        .height(300)
+        .margins({top: 10, right: 0, bottom: 80, left: 50})
+        .ordinalColors(["green","yellow","red","blue"])
+        .dimension(expCountryTopDimension)
+        .group(freeImporterSum)
+        .stack(partlyfreeImporterSum)
+        .stack(notfreeImporterSum)
+        .stack(unknownImporterSum)
+        .centerBar(true)
+        .gap(0)
+        .elasticY(true)
+        .elasticX(true)
+        .round(dc.round.floor)
+        .xUnits(dc.units.ordinal)
+        .x (d3.scale.ordinal()
+            //.domain(data.map(function(d){ return d.importcountry })
+            //.domain(impcountries)
+            .rangeRoundBands([0, 800], .1).domain(TopExporterList)
+            //.domain(array.map(function(d) { return d.importcountry; }))
+            //.rangeBands([0, 200])
+            )
+        .renderHorizontalGridLines(true)
+        .renderLabel(true)
+        .renderTitle(true)
+        .title(function(d) { return d.key + ": " + "\n" + "TIV value: " + numberFormatThousands(d3.round(d.value));})
+        .xAxis()
+        ;
+
+
+        chartBarTopImporters
+        .width(960)
+        .height(250)
+        .margins({top: 10, right: 10, bottom: 70, left: 120})
+        .dimension(impCountryTopDimension)
+        .group(impCountryTopDimensionGroup)
+        //.stack(partlyfreeYearlySum)
+        //.stack(notfreeYearlySum)
+        .centerBar(true)
+        .gap(0)
+        .elasticY(true)
+        .elasticX(true)
+        .round(dc.round.floor)
+        .xUnits(dc.units.ordinal)
+        .x (d3.scale.ordinal()
+            //.domain(data.map(function(d){ return d.importcountry })
+            //.domain(impcountries)
+            .rangeRoundBands([0, 800], .1)
+            //.domain(array.map(function(d) { return d.importcountry; }))
+            //.rangeBands([0, 200])
+            )
+        // .x (d3.scale.ordinal().domain(impCountryArray))
+        .renderHorizontalGridLines(true)
+        .renderLabel(true)
+        .renderTitle(true)
+        .title(function(d) { return d.key + ": " + "\n" + "TIV value: " + numberFormatThousands(d3.round(d.value));})
+        .xAxis()
+      
+        ;
+        
+//        chartBarImportersFHScore.width(620)
+//        .height(200)
+//        .margins({top: 0, right: 10, bottom: 20, left: 50})
+//        .dimension(fhScoreAggregate)
+//        .group(fhScoreAggregateGroup)
+//        //.stack(partlyfreeYearlySum)
+//        //.stack(notfreeYearlySum)
+//        .centerBar(true)
+//        .gap(0)
+//        .elasticY(true)
+//        .elasticX(true)
+//        .round(dc.round.floor)
+//        .xUnits(dc.units.ordinal)
+//        .x (d3.scale.ordinal()
+//            //.domain(data.map(function(d){ return d.importcountry })
+//            //.domain(impcountries)
+//            .rangeRoundBands([0, 800], .1)
+//            //.domain(array.map(function(d) { return d.importcountry; }))
+//            //.rangeBands([0, 200])
+//            )
+//        // .x (d3.scale.ordinal().domain(impCountryArray))
+//        .renderHorizontalGridLines(true)
+//        .renderLabel(true)
+//        .renderTitle(true)
+//        .xAxis()
+//       
+//        //.tickFormat(formatAsText)
+//        ;
+ 
+        chartBubbleImporters            
+        .width(940) // (optional) define chart width, :default = 200
+        .height(600) // (optional) define chart height, :default = 200
+        .margins({top: 10, right: 10, bottom: 20, left: 100})
+            .dimension(importerCrossDimension)
+            .group(importerCrossDimensionGroup)
+            .transitionDuration(1500)
+            .colors(["grey","green","yellow", "red"])
+    // Freedom House ratings are Free (1.0 to 2.5), Partly Free (3.0 to 5.0), or Not Free (5.5 to 7.0). 
+            .colorDomain([-1.000000001,7.000000001])
+            .colorAccessor(function (p) {
+                return p.value.fhscore_avg;
+                })
+             .x(d3.scale.linear().domain([-2, 9]))
+            // .y(d3.scale.linear().domain([-50000, 150000]))
+            //.r(d3.scale.linear().domain([0, 100000]))
+            .keyAccessor(function (p) {
+                return p.value.fhscore_avg;
+                })
+            .valueAccessor(function (p) {
+                return p.value.tiv_sum;
+                })
+            .radiusValueAccessor(function (p) {
+                return p.value.tiv_sum;
+                })
+            .elasticY(true)
+            //.elasticX(true)
+            .elasticRadius(true)
+            .maxBubbleRelativeSize(0.2)
+            .yAxisPadding("20%")
+            .xAxisPadding("10%")
+            .label(function (p) {
+              return p.key;
+              })
+              //.labelOffsetY(10)
+              .title(function(p) {
+                        return p.key 
+                                + "\n"
+                                + "Average FH Score: " + d3.round((p.value.fhscore_avg),1) + "\n"
+                                + "Total TIV value: " + numberFormatThousands(d3.round(p.value.tiv_sum));
+                    })
+            .renderLabel(true)
+            //.renderTitle(true)
+            .renderVerticalGridLines(true)
+            
+            ;
+                   
+    
+ 
+
+
+
+function rotateBarChartLabels() {
+            d3.selectAll('div#chart-bar-top-exporters > svg > g > .axis.x > .tick > text')
+              // rotate bar chart labels so they don't overlap
+              .attr("transform", function(d) { return "rotate(90, -15, 30)"; });
+          };
+
+          function rotateBarChartLabelsImports() {
+            d3.selectAll('div#chart-bar-top-importers > svg > g > .axis.x > .tick > text')
+              // rotate bar chart labels so they don't overlap
+              .attr("transform", function(d) { return "rotate(90, -15, 30)"; });
+          };
+
+ function rotateBarChartLabelsPercentExports() {
+            d3.selectAll('div#chart-bar-percent-top-exporters > svg > g > .axis.x > .tick > text')
+              // rotate bar chart labels so they don't overlap
+              .attr("transform", function(d) { return "rotate(90, -15, 30)"; });
+          };
+
+           function RefreshTable(alldata) {
+                    datatable.fnClearTable();
+                    datatable.fnAddData(alldata);
+                    datatable.fnDraw();
+                };
+          
+
+
+
+datatable = $(".dc-data-table").dataTable({
+                                
+                                "bDeferRender": true,
+                                // Restricted data in table to 2000 rows, make page load faster
+                                "aaData": allCsvData2000,
+                                // allCsvData.top(Infinity),
+                                "bDestroy": true,
+                                "aoColumns": [
+                                { "mData": "exportcountry", "sDefaultContent": " " },
+                                { "mData": "exportccode", "sDefaultContent": " " },
+                                { "mData": "importcountry", "sDefaultContent": " " },
+                                { "mData": "importccode", "sDefaultContent": " " },
+                                { "mData": "fh_rating_abc", "sDefaultContent": " " },
+                                { "mData": "tiv_value", "sDefaultContent": " " },
+                                { "mData": "year", "sDefaultContent": " " }
+                                                                          
+                                ]
+                            });
+           
+          // add listeners to  rotate labels and refresh data table
+          chartBarTopExporters.on("postRender", function(c) {rotateBarChartLabelsImports(); rotateBarChartLabels();rotateBarChartLabelsPercentExports();} );
+          chartBarTopExporters.on("postRedraw", function(c) {rotateBarChartLabelsImports(); rotateBarChartLabels();rotateBarChartLabelsPercentExports();} );
+
+
+        chartPieCountry.on("filtered", function (chart) {
+        dc.events.trigger(function () {
+        alldata = allCsvData.top(Infinity);
+        RefreshTable(alldata);
+        });
+        });
+
+        chartBarFreeYear.on("filtered", function (chart) {
+        dc.events.trigger(function () {
+        alldata = allCsvData.top(Infinity);
+        RefreshTable(alldata);
+        });
+        });
+        
+        chartBarTopExporters.on("filtered", function (chart) {
+        dc.events.trigger(function () {
+        alldata = allCsvData.top(Infinity);
+        RefreshTable(alldata);
+        });
+        });
+              
+chartBarTopImporters.on("filtered", function (chart) {
+        dc.events.trigger(function () {
+        alldata = allCsvData.top(Infinity);
+        RefreshTable(alldata);
+        });
+        });
+
+chartBubbleImporters.on("filtered", function (chart) {
+        dc.events.trigger(function () {
+        alldata = allCsvData.top(Infinity);
+        RefreshTable(alldata);
+        });
+        });  
+      
+        
+        
+
+// JQUERY SELECT BOX
+
+// Fill Exporter Dropdown
+var select_box_options = TopExporterListUnsorted;     
+var sel = document.getElementById('TopExporterListChosen');
+for(var i = 0; i < select_box_options.length; i++) {
+    var opt = document.createElement('option');
+    opt.innerHTML = select_box_options[i];
+    opt.value = select_box_options[i];
+    sel.appendChild(opt);
+};
+
+// Fill Importer Dropdown
+var select_box_importer_options = TopImporterListUnsorted;     
+var sel = document.getElementById('TopImporterListChosen');
+for(var i = 0; i < select_box_importer_options.length; i++) {
+    var opt = document.createElement('option');
+    opt.innerHTML = select_box_importer_options[i];
+    opt.value = select_box_importer_options[i];
+    sel.appendChild(opt);
+};
+
+// Get values from select box and send them to filter.
+// NOTE - if you filter on a chart, this goes weird. Have to filter on a separate 
+// dimension that is NOT connected to a chart
+// Works on a chart in dc.js 1.7, but this bar chart has values too small to be clickable
+// so data-wide filter is more useful here
+document.getElementById('buttonSendExporters').onclick = function() {
+    var mySelectBoxArray = $("#TopExporterListChosen").val();
+        if (mySelectBoxArray!==null) {
+            expCountrySelectTopDimension.filter(function(d) { return mySelectBoxArray.indexOf(d) >= 0; });
+            // chartBarTopExporters.filter([mySelectBoxArray.split(',')]);
+            // expCountrySelectTopDimension.filter([mySelectBoxArray]);
+            } else {
+              expCountrySelectTopDimension.filter(null);
+             // chartBarTopExporters.filter(null);
+                    }
+                    dc.redrawAll();
+                    // Refresh the data table
+                    alldata = allCsvData.top(Infinity);
+                    RefreshTable(alldata);
+                    };
+                    
+                    document.getElementById('buttonSendImporters').onclick = function() {
+    var mySelectBoxArray2 = $("#TopImporterListChosen").val();
+        if (mySelectBoxArray2!==null) {
+            impCountrySelectTopDimension.filter(function(d) { return mySelectBoxArray2.indexOf(d) >= 0; });
+            // chartBarTopExporters.filter([mySelectBoxArray.split(',')]);
+            // expCountrySelectTopDimension.filter([mySelectBoxArray]);
+            } else {
+              impCountrySelectTopDimension.filter(null);
+             // chartBarTopExporters.filter(null);
+                    }
+                    dc.redrawAll();
+                    // Refresh the data table
+                    alldata = allCsvData.top(Infinity);
+                    RefreshTable(alldata);
+                    };
+
+//Active Jquery "Chosen" plugin
+$(".chosen-select").chosen();
+
+
+
+// Clear all filters button
+document.getElementById("clickReset").onclick = function ()
+{
+                // Reset the chosen-jquery select box (harder than you think...)   
+                   $('#TopExporterListChosen').val('').trigger('chosen:updated');
+                   $('#TopImporterListChosen').val('').trigger('chosen:updated');
+                   
+                   // Get rid of the crossfilter filter (dc.filterAll won't destroy it)
+                   expCountrySelectTopDimension.filter(null);
+                   impCountrySelectTopDimension.filter(null);
+                   
+                    dc.filterAll();
+                    dc.redrawAll();
+                    dc.filterAll("chartGroupA");
+                    dc.redrawAll("chartGroupA");
+                    // Consider setting to .top(2000) to reduce loading time
+                    alldata = allCsvData.top(Infinity);
+                    RefreshTable(alldata);
+};
+
+            dc.renderAll();
+            dc.renderAll("chartGroupA");
+        }
+);
+
+</script> 
+                
+            </div>
+          </div>
+            
+            
+  
+    <script type="text/javascript">
+    // Show/Hide folded paragraph from
+    // http://stackoverflow.com/questions/15719391/multiple-basic-slidetoggles-in-the-same-page-doesnt-work
+
+            function toggle(id, link) {
+                var ele = document.getElementById(id);
+                var text = document.getElementById(link);
+                if(ele.style.display === "block") {
+                        ele.style.display = "none";
+                    text.innerHTML = "show";
+                }
+                else {
+                    ele.style.display = "block";
+                    text.innerHTML = "hide";
+                }
+            };  
+    // END SHOW/HIDE DIV
+    </script>
+
+<!-- Footer -->
+<!-- not needed below    
+<div class="row">
+        <div class="col-xs-12 col-md-12">
+            <div id="footer">
+                                        <div class="well well-lg">
+                        Copyright Jon Fowler 2013
+Comments on this site are moderated<br>
+                    </div>                 
+            </div>
+        </div>	
+</div>
+-->
+
+<!-- /Footer -->
+                    
+<!-- /container -->      
+</div>
+<!-- /container --> 
+
+<!-- Javascript -->
+    
+<!-- <script src="http://code.jquery.com/jquery.js"></script> -->
+<!-- <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script> ->>
+
+<!-- /Javascript -->
+</body>
+</html>

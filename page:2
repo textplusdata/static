@@ -7,7 +7,7 @@
 <meta name="author" content="Jon" />
 <meta name="generator" content="Datenstrom Yellow" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta property="og:url" content="https://textplusdata.se/static/" />
+<meta property="og:url" content="https://textplusdata.se/static/page:2" />
 <meta property="og:locale" content="en_GB" />
 <meta property="og:type" content="website" />
 <meta property="og:title" content="Blog" />
@@ -37,60 +37,18 @@
 </div>
 <div class="content">
 <div class="main" role="main">
-<div class="entry tag-data-visualisation">
-<div class="entry-title"><h1><a href="/static/SipriFreedomHouseInline">Data visualisation inline</a></h1></div>
-<div class="entry-meta"><p>2021-03-09 by <a href="/static/author:datenstrom/">Datenstrom</a></p></div>
-<div class="entry-content"><p>In 2013 I made a <a href="http://dc-js.github.io/dc.js/">dc-js</a> visualisation combining data from <a href="https://www.sipri.org/">SIPRI</a> and <a href="https://freedomhouse.org">Freedom House</a>.</p></div>
+<div class="entry tag-example">
+<div class="entry-title"><h1><a href="/static/made-for-people">Made for people</a></h1></div>
+<div class="entry-meta"><p>2020-12-06 by <a href="/static/author:datenstrom/">Datenstrom</a></p></div>
+<div class="entry-content"><p>Datenstrom Yellow is for people who make small websites. Create small web pages, blogs and wikis. The focus is on people and that it's useful for you. No database, no admin panel, nothing that gets in your way. You make your website, we take care of the rest.</p></div>
 </div>
-<div class="entry tag-data-visualisation">
-<div class="entry-title"><h1><a href="/static/SipriFreedomHouseExtension">Data visualisation EXTENSION</a></h1></div>
-<div class="entry-meta"><p>2021-03-09 by <a href="/static/author:datenstrom/">Datenstrom</a></p></div>
-<div class="entry-content"><p>In 2013 I made a <a href="http://dc-js.github.io/dc.js/">dc-js</a> visualisation combining data from <a href="https://www.sipri.org/">SIPRI</a> and <a href="https://freedomhouse.org">Freedom House</a>.</p>
-
-<p>Here is the original post:</p>
-
-<div class="helloworld" aria-label="Hello World" data-message="Hello World" data-speed="100">&nbsp;</div>
-
-<p>[dataviz]</p>
-
-<a href="/static/SipriFreedomHouseExtension">Read more…</a></div>
-</div>
-<div class="entry tag-data-visualisation">
-<div class="entry-title"><h1><a href="/static/SipriFreedomHouse">Data visualisation TEST</a></h1></div>
-<div class="entry-meta"><p>2021-03-09 by <a href="/static/author:datenstrom/">Datenstrom</a></p></div>
-<div class="entry-content"><style>
-iframe.fullwidth {  width: 100%;  height: 800px; } 
-</style>
-
-<p>In 2013 I made a <a href="http://dc-js.github.io/dc.js/">dc-js</a> visualisation combining data from <a href="https://www.sipri.org/">SIPRI</a> and <a href="https://freedomhouse.org">Freedom House</a>.</p>
-
-<p>Here is the original post:</p>
-
-<div class="helloworld" aria-label="Hello World" data-message="Hello World" data-speed="100">&nbsp;</div>
-
-<p>[dataviz]</p>
-
-<a href="/static/SipriFreedomHouse">Read more…</a></div>
-</div>
-<div class="entry tag-data-visualisation">
-<div class="entry-title"><h1><a href="/static/JS-Test">Test JS script in body</a></h1></div>
-<div class="entry-meta"><p>2021-03-09 by <a href="/static/author:datenstrom/">Datenstrom</a></p></div>
-<div class="entry-content"><p>Introduction blah blah blah.</p>
-
-<script type="text/javascript"> 
-
-    document.write("JavaScript is a language"); 
-    
-</script></div>
-</div>
-<div class="entry tag-data-visualisation">
-<div class="entry-title"><h1><a href="/static/Dynamic">Dynamic DataViz</a></h1></div>
-<div class="entry-meta"><p>2021-03-09 by <a href="/static/author:datenstrom/">Datenstrom</a></p></div>
-<div class="entry-content"><p>Something.
-<a href="/static/Dynamic">Read more…</a></p></div>
+<div class="entry tag-example">
+<div class="entry-title"><h1><a href="/static/blog-example">Blog example</a></h1></div>
+<div class="entry-meta"><p>2020-04-07 by <a href="/static/author:datenstrom/">Datenstrom</a></p></div>
+<div class="entry-content"><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna pizza. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. <a href="/static/blog-example">Read more…</a></p></div>
 </div>
 <div class="pagination" role="navigation">
-<a class="next" href="/static/page:2">Next →</a>
+<a class="previous" href="/static/">← Previous</a>
 </div>
 </div>
 </div>
