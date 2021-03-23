@@ -2,6 +2,7 @@
 <html lang="en" prefix="og: http://ogp.me/ns#">
 <head>
 <title>Data visualisation EXTENSION - Text Plus Data</title>
+<meta charset="UTF-8" />
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta name="description" content="In 2013 I made a dc-js visualisation combining data from SIPRI and Freedom House. Here is the original post:   [dataviz]" />
 <meta name="author" content="Datenstrom" />
